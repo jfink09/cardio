@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 
 <head>
+    <script src="https://kit.fontawesome.com/88f8deda0e.js" crossorigin="anonymous"></script>
      <style>
 
 * {
@@ -15,16 +16,16 @@ body {
 
 .top {
     width: 100%;
-    position: absolute;
+    position: fixed;
     top: 0;
     outline: none;
     pointer-events: none;
-    z-index: -1;
+    z-index: 1;
 }
 
 .bottom {
     width: 100%;
-    position: absolute;
+    position: fixed;
     bottom: 0;
     pointer-events: none
 }
@@ -39,21 +40,86 @@ ul {
   overflow: hidden;
 }
 
-li {
+.navlink {
   float: right;
 }
 
-li a {
+.navanchor {
   display: block;
   color: white;
-  text-align: center;
   padding: 14px 16px;
   text-decoration: none;
 }
 
 /* Change the link color to #111 (black) on hover */
-li a:hover {
+.navanchor:hover {
   font-size: larger;
+}
+
+/*.about {
+    /*width: 60%;
+    background-color: #ebebeb8d;
+    border-radius: 1em 2em 3em 4em;
+    padding: 5px;*/
+   /* margin: 10em 0 0 5em;
+    display: inline-block;
+}
+
+p {
+    font-size: 40px;
+    color: #fff;
+    width: 50%;
+}
+
+.about-2 {
+    width: 400px;
+    height: 400px;
+    margin: 2em 0 0 8em;
+    padding-left: 2em;
+    display: inline-block;
+}
+
+.list {
+    color: #fff;
+    margin: 0 5em 0 0;
+    font-size: 30px;
+    display: block;
+}*/
+
+p {
+    font-size: 40px;
+    color: #fff;
+    text-align: center;
+}
+
+.list {
+    font-size: 30px;
+}
+
+#div1 {
+    display: inline-block;
+    margin: 5em 0 0 5em;
+    width:500px;
+    height:300px;
+    font-size: 30px;
+    color: #fff;
+}
+#div2 {
+    display: inline-block;
+    list-style: none;
+    width:300px;
+    height:400px;
+    float: right;
+    color: #fff;
+    font-size: 25px;
+    margin: 5em 5em 0 0;
+}
+
+.heart {
+    height: 200px;
+    margin: -7em 0 0 18em;
+    transform: rotate(-10deg);
+    pointer-events: none;
 }
 
 
@@ -63,13 +129,52 @@ li a:hover {
 <body>
 
     <ul>
-        <li><a href="#">Contact</a></li>
-        <li><a href="#">About</a></li>
-        <li><a href="#">Timeline</a></li>
-        <li><a href="#">Home</a></li>
+        <li class="navlink"><a class="navanchor" href="#">Contact</a></li>
+        <li class="navlink"><a class="navanchor" href="#">About</a></li>
+        <li class="navlink"><a class="navanchor" href="#">Timeline</a></li>
+        <li class="navlink"><a class="navanchor" href="#">Home</a></li>
       </ul>
 
 <img class="top" src="svg2.svg">
+
+<!--<div class="about">
+    <p>Patient-specific data from patient-specific irregular hemodynamics</p>
+        <!--One idea I have is to research the application of artificial intelligence and deep learning algorithms in the hemodynamics 
+        of cardiovascular diseases. My undergraduate thesis involved fluid mechanics for which I would like to apply to cardiovascular 
+        hemodynamics. My idea is to convert patient MRA scans or angiograms into models that run on computational fluid dynamics (CFD) 
+        software. Fluid flow simulations on the patient models would provide data across normal and pathologic vascular segments. I 
+        would also like to study how CFD simulations can be optimized using deep learning algorithms. This patient specific data may lead 
+        to improved treatment and the creation of medical software or a device to help in diagnosis and treatment. I am considering a 
+        career in academic medicine where I can treat patients and perform innovative research using my degrees in medicine and engineering.--></p>
+<!--</div>
+<div class="about-2">
+    <p class="about-2-style">
+            <li class="list">Atherosclerosis</li><br>
+            <li class="list">Vascular Stenosis</li><br>
+            <li class="list">Thrombosis</li><br>
+            <li class="list">Aortic Aneurysm</li><br>
+            <li class="list">Heart Failure</li><br>
+            <li class="list">Dysrhythmia</li>
+    </p>
+</div>-->
+<section style="height: 1000px;">
+<div id="wrapper">
+    <div id="div1">
+      <p>Personalized data from patient-specific irregular hemodynamics</p>
+    </div>
+    <div id="div2">
+    <p class="about-2-style">
+            <li class="list">Atherosclerosis</li><br>
+            <li class="list">Vascular Stenosis</li><br>
+            <li class="list">Thrombosis</li><br>
+            <li class="list">Aortic Aneurysm</li><br>
+            <li class="list">Heart Failure</li><br>
+            <li class="list">Dysrhythmia</li>
+    </p>
+</div>
+</div>
+<img class="heart" src="heart.png" alt="Heart">
+</section>
 <img class="bottom" src="svg.svg">
 
     
