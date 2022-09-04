@@ -14,6 +14,95 @@ body {
     background: #860a0a;
 }
 
+.nav {
+  height: 50px;
+  width: 100%;
+  position: fixed;
+  z-index: 2;
+}
+
+.nav > .nav-header {
+  display: inline;
+}
+
+.nav > .nav-header > .nav-title {
+  display: inline-block;
+  font-size: 22px;
+  color: #fff;
+  padding: 10px 10px 10px 10px;
+}
+
+.nav > .nav-btn {
+  display: none;
+}
+
+.nav > .nav-links {
+  display: inline;
+  float: right;
+  font-size: 18px;
+}
+
+.nav > .nav-links > a {
+  display: inline-block;
+  padding: 13px 10px 13px 10px;
+  text-decoration: none;
+  color: #fff;
+}
+
+.nav > .nav-links > a:hover {
+  background-color: rgba(0, 0, 0, 0.3);
+}
+
+.nav > #nav-check {
+  display: none;
+}
+
+@media (max-width:600px) {
+  .nav > .nav-btn {
+    display: inline-block;
+    position: absolute;
+    right: 0px;
+    top: 0px;
+  }
+  .nav > .nav-btn > label {
+    display: inline-block;
+    width: 50px;
+    height: 50px;
+    padding: 13px;
+  }
+  nav > .nav-btn > label:hover,.nav  #nav-check:checked ~ .nav-btn > label {
+    cursor: pointer;
+  }
+  .nav > .nav-btn > label > span {
+    display: block;
+    width: 25px;
+    height: 10px;
+    border-top: 2px solid #eee;
+  }
+  .nav > .nav-links {
+    position: absolute;
+    display: block;
+    width: 100%;
+    background-color: #333;
+    height: 0px;
+    transition: all 0.3s ease-in;
+    overflow-y: hidden;
+    top: 50px;
+    left: 0px;
+  }
+  .nav > .nav-links > a {
+    display: block;
+    width: 100%;
+  }
+  .nav > #nav-check:not(:checked) ~ .nav-links {
+    height: 0px;
+  }
+  .nav > #nav-check:checked ~ .nav-links {
+    height: calc(100vh - 50px);
+    overflow-y: auto;
+  }
+}
+
 .top {
     width: 100%;
     position: fixed;
@@ -38,6 +127,7 @@ ul {
   margin: 0;
   padding: 0;
   overflow: hidden;
+  z-index: 1;
 }
 
 .navlink {
@@ -98,7 +188,7 @@ p {
 
 #div1 {
     display: inline-block;
-    margin: 5em 0 0 5em;
+    margin: 7em 0 0 5em;
     width:500px;
     height:300px;
     font-size: 30px;
@@ -112,7 +202,7 @@ p {
     float: right;
     color: #fff;
     font-size: 25px;
-    margin: 5em 5em 0 0;
+    margin: 8em 5em 0 0;
 }
 
 .heart {
@@ -122,18 +212,47 @@ p {
     pointer-events: none;
 }
 
+.map {
+    height: 400px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
 
     </style>
 </head>
 
 <body>
 
-    <ul>
+    <div class="nav">
+        <input type="checkbox" id="nav-check">
+        <div class="nav-header">
+          <div class="nav-title">
+            CardialFlow
+          </div>
+        </div>
+        <div class="nav-btn">
+          <label for="nav-check">
+            <span></span>
+            <span></span>
+            <span></span>
+          </label>
+        </div>
+        
+        <div class="nav-links">
+          <a href="file:///Users/jason/Desktop/cardialflow.html">Home</a>
+          <a href="#target1">Overview</a>
+          <a href="https://in.linkedin.com/in/jonesvinothjoseph" target="_blank">About</a>
+          <a href="https://codepen.io/jo_Geek/" target="_blank">Contact</a>
+        </div>
+      </div>
+
+   <!-- <ul>
         <li class="navlink"><a class="navanchor" href="#">Contact</a></li>
         <li class="navlink"><a class="navanchor" href="#">About</a></li>
         <li class="navlink"><a class="navanchor" href="#">Timeline</a></li>
         <li class="navlink"><a class="navanchor" href="#">Home</a></li>
-      </ul>
+      </ul>-->
 
 <img class="top" src="svg2.svg">
 
@@ -157,7 +276,7 @@ p {
             <li class="list">Dysrhythmia</li>
     </p>
 </div>-->
-<section style="height: 1000px;">
+<section style="height: 700px;">
 <div id="wrapper">
     <div id="div1">
       <p>Personalized data from patient-specific irregular hemodynamics</p>
@@ -175,6 +294,9 @@ p {
 </div>
 <img class="heart" src="heart.png" alt="Heart">
 </section>
+<section id="target1" style="height: 600px;">
+    <img class="map" src="hemomap.png" alt="Map">
+    </section>
 <img class="bottom" src="svg.svg">
 
     
